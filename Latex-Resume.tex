@@ -1,0 +1,128 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{lipsum}
+\usepackage{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{uarial}
+\usepackage{microtype}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+%Your information replaces the variables here
+\newcommand{\name}{Ezra Crowe}
+\newcommand{\jobTitleOrMajor}{CS and Philosophy Major}
+\newcommand{\address}{1111 NE 101st St Fakeville WA}
+\newcommand{\phoneNumber}{800-123-1234}
+\newcommand{\email}{fakedude@gmail.com}
+\newcommand{\objective}{your objective goes here}
+\newcommand{\education}{\lipsum*[1][1-12]}
+\newcommand{\experience}{\lipsum*[1-2][1-29]}
+\newcommand{\keySkills}{\lipsum*[1][1-8]}
+\newcommand{\accomplishments}{\lipsum*[1-2][1-21]}
+
+\geometry
+{
+    left=2cm,
+    right=2cm,
+    marginparsep = 0cm,
+    bottom = 0cm
+}
+
+\pagestyle{empty}
+
+\definecolor{better-gray}{RGB}{152, 156, 164}
+\definecolor{better-orange}{RGB}{191, 146, 104}
+\definecolor{better-blue}{RGB}{48, 56, 72}
+\definecolor{better-light-gray}{RGB}{242, 242, 242}
+
+\begin{document}
+
+\begin{tikzpicture}[remember picture, overlay]
+\fill[better-gray] (current page.north west) rectangle ([yshift=-4cm]current page.north east);
+\fill[better-orange] ([xshift=2cm, yshift=-4.5cm]current page.north west) rectangle ([xshift=-2cm, yshift=-2cm]current page.north east);
+\fill[white] ([xshift=2.1cm, yshift=-4.4cm]current page.north west) rectangle ([xshift=-2.1cm, yshift=-2.1cm]current page.north east);
+
+\centering\node at (current page.north) [yshift=-3.0cm, text=black, font=\Huge] {\textls[150]{\name}};
+\centering\node at (current page.north) [yshift=-3.9cm, text=black, font= \Large] {\textls[200]{\jobTitleOrMajor}};
+\end{tikzpicture}
+
+
+\vspace*{15mm}
+
+\noindent\begin{minipage}[t]{0.25\textwidth}
+\noindent \centering \address
+\end{minipage}%\hspace*{0.125\textwidth}
+\begin{minipage}[t]{0.5\textwidth}
+    \noindent \centering \phoneNumber
+\end{minipage}
+\begin{minipage}[t]{0.25\textwidth}
+    \noindent \centering \email
+\end{minipage}
+
+\vspace*{8mm}
+
+\noindent\color{better-orange}\rule{\linewidth}{0.7mm}
+\color{black}
+
+\begin{tikzpicture}[remember picture, overlay]
+    \fill[better-blue] ([xshift=8cm, yshift=-7.3cm]current page.north west) rectangle ([xshift=-8cm, yshift=-6.5cm]current page.north east);
+    
+    \centering\node at (current page.north) [yshift=-6.9cm, text=white, font=\large] {\textls[150]{OBJECTIVE}};
+\end{tikzpicture}
+
+\noindent\centering \objective
+
+\vspace*{7mm}
+
+\noindent\color{better-orange}\rule{\linewidth}{0.7mm}
+\color{black}
+
+
+\hspace*{6cm}
+\begin{minipage}[t][9cm][t]{0.65\linewidth}
+    \raggedright
+    \vspace*{5pt}
+
+    \noindent \experience
+\end{minipage}
+
+\noindent\color{better-orange}\rule{\linewidth}{0.7mm}
+
+\color{black}
+
+\vspace{5mm}
+
+\hspace*{6cm}
+\begin{minipage}[t][5cm][t]{0.65\linewidth}
+    \raggedright
+    \vspace*{5pt}
+
+    \noindent \accomplishments
+\end{minipage}
+
+\begin{tikzpicture}[remember picture, overlay]
+    \fill[better-blue] ([xshift=8cm, yshift=-8.92cm]current page.north west) rectangle ([xshift=-8cm, yshift=-9.72cm]current page.north east);
+    
+    \centering\node at (current page.north) [yshift=-9.32cm, text=white, font=\large] {\textls[150]{EXPERIENCE}};
+
+    \fill[better-light-gray] ([xshift=2cm, yshift=-8.92cm]current page.north west) rectangle ([xshift= -\linewidth + 4cm, yshift=-27cm]current page.north east);
+
+    \node at (current page.north west) [xshift=4cm, yshift=-9.32cm, text=black, font=\large] {\textls[150]{EDUCATION --}};
+
+    \node at (current page.north west) [xshift=5cm, yshift=4.5cm, text=black, font=\normalsize, text width=5.3cm, text height=15cm, anchor=north] {\noindent \education};
+
+    \node at (current page.north west) [xshift=4cm, yshift=-19.25cm, text=black, font=\large] {\textls[150]{KEY SKILLS --}};
+
+    \node at (current page.north west) [xshift=5cm, yshift=-5.5cm, text=black, font=\normalsize, text width=5.3cm, text height=15cm, anchor=north] {\noindent \keySkills};
+    
+
+\end{tikzpicture}
+
+\begin{tikzpicture}[remember picture, overlay]
+    \fill[better-blue] ([xshift=8cm, yshift=-19.65cm]current page.north west) rectangle ([xshift=-8cm, yshift=-18.85cm]current page.north east);
+    
+    \centering\node at (current page.north) [yshift=-19.25cm, text=white, font=\large] {\textls[150]{ACCOMPLISHMENTS}};
+\end{tikzpicture}
+
+\end{document}
